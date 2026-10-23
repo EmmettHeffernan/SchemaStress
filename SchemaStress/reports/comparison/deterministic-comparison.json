@@ -1,0 +1,11 @@
+{
+  "fixture_cases": 12,
+  "schemastress_summary_on_promptfoo_provider_outputs": {
+    "cases": 12,
+    "parse_success_rate": 0.9166666666666666,
+    "schema_compliance_rate": 0.9166666666666666,
+    "field_accuracy": 0.8958333333333334,
+    "case_exact_match_rate": 0.8333333333333334
+  },
+  "actual_promptfoo_cli_executed": false
+}

@@ -1,0 +1,433 @@
+{
+  "summary": {
+    "cases": 12,
+    "parse_success_rate": 0.9166666666666666,
+    "schema_compliance_rate": 0.9166666666666666,
+    "field_accuracy": 0.8958333333333334,
+    "case_exact_match_rate": 0.8333333333333334
+  },
+  "results": [
+    {
+      "case_id": "INC-001",
+      "category": "ordinary",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Customer impact has not been confirmed"
+        },
+        "incident_id": {
+          "expected": "INC-1042",
+          "actual": "INC-1042",
+          "correct": true,
+          "evidence": "Incident INC-1042"
+        },
+        "service": {
+          "expected": "payments-api",
+          "actual": "payments-api",
+          "correct": true,
+          "evidence": "Service: payments-api"
+        },
+        "severity": {
+          "expected": "high",
+          "actual": "high",
+          "correct": true,
+          "evidence": "Severity: high"
+        }
+      }
+    },
+    {
+      "case_id": "INC-002",
+      "category": "reordered",
+      "parse_success": false,
+      "schema_valid": false,
+      "field_accuracy": 0.0,
+      "all_expected_fields_correct": false,
+      "errors": [
+        "invalid JSON line 1, column 16: Expecting value"
+      ],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": "<MISSING>",
+          "correct": false,
+          "evidence": "Customer impact has not been confirmed"
+        },
+        "incident_id": {
+          "expected": "INC-1042",
+          "actual": "<MISSING>",
+          "correct": false,
+          "evidence": "Incident identifier: INC-1042"
+        },
+        "service": {
+          "expected": "payments-api",
+          "actual": "<MISSING>",
+          "correct": false,
+          "evidence": "The service is payments-api"
+        },
+        "severity": {
+          "expected": "high",
+          "actual": "<MISSING>",
+          "correct": false,
+          "evidence": "Severity is high"
+        }
+      }
+    },
+    {
+      "case_id": "INC-003",
+      "category": "missing_evidence",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": null
+        },
+        "incident_id": {
+          "expected": "INC-1043",
+          "actual": "INC-1043",
+          "correct": true,
+          "evidence": "Incident INC-1043"
+        },
+        "service": {
+          "expected": "auth-api",
+          "actual": "auth-api",
+          "correct": true,
+          "evidence": "Service: auth-api"
+        },
+        "severity": {
+          "expected": "medium",
+          "actual": "medium",
+          "correct": true,
+          "evidence": "Severity: medium"
+        }
+      }
+    },
+    {
+      "case_id": "INC-004",
+      "category": "distractor",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 0.75,
+      "all_expected_fields_correct": false,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Current impact is not yet assessed"
+        },
+        "incident_id": {
+          "expected": "INC-1044",
+          "actual": "INC-1044",
+          "correct": true,
+          "evidence": "Incident INC-1044"
+        },
+        "service": {
+          "expected": "search-api",
+          "actual": "search-api",
+          "correct": true,
+          "evidence": "Service: search-api"
+        },
+        "severity": {
+          "expected": "low",
+          "actual": "critical",
+          "correct": false,
+          "evidence": "Severity: low"
+        }
+      }
+    },
+    {
+      "case_id": "INC-005",
+      "category": "conflict",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Customer impact unknown"
+        },
+        "incident_id": {
+          "expected": "INC-1045",
+          "actual": "INC-1045",
+          "correct": true,
+          "evidence": "INC-1045"
+        },
+        "service": {
+          "expected": "billing-api",
+          "actual": "billing-api",
+          "correct": true,
+          "evidence": "Service: billing-api"
+        },
+        "severity": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Conflicting severity values: medium and high"
+        }
+      }
+    },
+    {
+      "case_id": "INC-006",
+      "category": "ordinary",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": "17 orders delayed",
+          "actual": "17 orders delayed",
+          "correct": true,
+          "evidence": "Customer impact: 17 orders delayed"
+        },
+        "incident_id": {
+          "expected": "INC-1046",
+          "actual": "INC-1046",
+          "correct": true,
+          "evidence": "INC-1046"
+        },
+        "service": {
+          "expected": "inventory-api",
+          "actual": "inventory-api",
+          "correct": true,
+          "evidence": "affects inventory-api"
+        },
+        "severity": {
+          "expected": "critical",
+          "actual": "critical",
+          "correct": true,
+          "evidence": "Severity is critical"
+        }
+      }
+    },
+    {
+      "case_id": "INC-007",
+      "category": "instruction_distractor",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": "none reported",
+          "actual": "none reported",
+          "correct": true,
+          "evidence": "Customer impact: none reported"
+        },
+        "incident_id": {
+          "expected": "INC-1047",
+          "actual": "INC-1047",
+          "correct": true,
+          "evidence": "Incident INC-1047"
+        },
+        "service": {
+          "expected": "catalog-api",
+          "actual": "catalog-api",
+          "correct": true,
+          "evidence": "Service: catalog-api"
+        },
+        "severity": {
+          "expected": "low",
+          "actual": "low",
+          "correct": true,
+          "evidence": "Severity: low"
+        }
+      }
+    },
+    {
+      "case_id": "INC-008",
+      "category": "formatting",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": "No impact reported",
+          "actual": "No impact reported",
+          "correct": true,
+          "evidence": "impact=No impact reported"
+        },
+        "incident_id": {
+          "expected": "INC-1048",
+          "actual": "INC-1048",
+          "correct": true,
+          "evidence": "INC-1048"
+        },
+        "service": {
+          "expected": "notifications-api",
+          "actual": "notifications-api",
+          "correct": true,
+          "evidence": "service=notifications-api"
+        },
+        "severity": {
+          "expected": "medium",
+          "actual": "medium",
+          "correct": true,
+          "evidence": "severity=medium"
+        }
+      }
+    },
+    {
+      "case_id": "INC-009",
+      "category": "missing_field",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Customer impact: unknown"
+        },
+        "incident_id": {
+          "expected": "INC-1049",
+          "actual": "INC-1049",
+          "correct": true,
+          "evidence": "Incident INC-1049"
+        },
+        "service": {
+          "expected": "search-api",
+          "actual": "search-api",
+          "correct": true,
+          "evidence": "Service: search-api"
+        },
+        "severity": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Severity was omitted"
+        }
+      }
+    },
+    {
+      "case_id": "INC-010",
+      "category": "conflict",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Conflicting impact statements without ordering metadata"
+        },
+        "incident_id": {
+          "expected": "INC-1050",
+          "actual": "INC-1050",
+          "correct": true,
+          "evidence": "Incident INC-1050"
+        },
+        "service": {
+          "expected": "auth-api",
+          "actual": "auth-api",
+          "correct": true,
+          "evidence": "Service: auth-api"
+        },
+        "severity": {
+          "expected": "high",
+          "actual": "high",
+          "correct": true,
+          "evidence": "Severity: high"
+        }
+      }
+    },
+    {
+      "case_id": "INC-011",
+      "category": "ordinary",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": "No customer-facing impact was observed",
+          "actual": "No customer-facing impact was observed",
+          "correct": true,
+          "evidence": "No customer-facing impact was observed"
+        },
+        "incident_id": {
+          "expected": "INC-1051",
+          "actual": "INC-1051",
+          "correct": true,
+          "evidence": "Record ID: INC-1051"
+        },
+        "service": {
+          "expected": "search-indexer",
+          "actual": "search-indexer",
+          "correct": true,
+          "evidence": "Affected component is search-indexer"
+        },
+        "severity": {
+          "expected": "low",
+          "actual": "low",
+          "correct": true,
+          "evidence": "Severity level: low"
+        }
+      }
+    },
+    {
+      "case_id": "INC-012",
+      "category": "irrelevant_numbers",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "all_expected_fields_correct": true,
+      "errors": [],
+      "fields": {
+        "customer_impact": {
+          "expected": null,
+          "actual": null,
+          "correct": true,
+          "evidence": "Current customer impact is unknown"
+        },
+        "incident_id": {
+          "expected": "INC-1052",
+          "actual": "INC-1052",
+          "correct": true,
+          "evidence": "Incident INC-1052"
+        },
+        "service": {
+          "expected": "payments-api",
+          "actual": "payments-api",
+          "correct": true,
+          "evidence": "Service: payments-api"
+        },
+        "severity": {
+          "expected": "high",
+          "actual": "high",
+          "correct": true,
+          "evidence": "Severity: high"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "pytest_returncode": 0,
+  "pytest_stdout": "......                                                                   [100%]\n6 passed in 0.95s\n",
+  "pytest_stderr": "",
+  "demo_returncode": 0,
+  "demo_stdout": "{\n  \"cases\": 12,\n  \"parse_success_rate\": 0.9166666666666666,\n  \"schema_compliance_rate\": 0.9166666666666666,\n  \"field_accuracy\": 0.8958333333333334,\n  \"case_exact_match_rate\": 0.8333333333333334\n}\nReports written to /mnt/data/SchemaStress/reports/demo\n",
+  "demo_stderr": "",
+  "regression_gate_returncode": 1,
+  "regression_gate_stdout": "{\n  \"cases\": 12,\n  \"parse_success_rate\": 0.9166666666666666,\n  \"schema_compliance_rate\": 0.9166666666666666,\n  \"field_accuracy\": 0.8958333333333334,\n  \"case_exact_match_rate\": 0.8333333333333334\n}\nReports written to /mnt/data/SchemaStress/reports/gate\n",
+  "regression_gate_stderr": "Regression gate failed: field accuracy below 100.0%\n"
+}
