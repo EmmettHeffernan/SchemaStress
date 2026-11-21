@@ -15,15 +15,11 @@ npx --yes promptfoo@latest eval -c promptfooconfig.deterministic.yaml --no-cache
 
 This deterministic evaluation uses no paid model API. It tests Promptfoo's actual assertion engine against seeded fixture outputs, not LLM quality.
 
-## Option B — use GitHub Actions
-
-The repository includes `.github/workflows/promptfoo-comparison.yml`. After the project is pushed to a GitHub repository, open **Actions → Promptfoo deterministic comparison → Run workflow**. GitHub's hosted runner can install Promptfoo using npm, run the tests and evaluation, and attach result files as a workflow artifact.
-
-The workflow is deliberately manual-capable and only runs automatically on relevant project-file changes. It does not need secrets or a model API key.
+The repository CI checks Python fixture parity. A hosted Promptfoo CLI run would require a separate workflow.
 
 ## Important interpretation
 
 - `scripts/check_parity.py` computes expected parity from shared fixtures; it does not execute Promptfoo.
-- The GitHub Actions `npx promptfoo ... eval` step is the real Promptfoo run.
+- A successful `promptfoo eval` invocation would be the real Promptfoo run.
 - Since the provider intentionally injects two failures, the evaluation is a plumbing/diagnostics test, not a benchmark of model capability.
 - If Promptfoo rejects the YAML, provider path, or assertion syntax, use the workflow logs to fix that integration before drawing conclusions.
