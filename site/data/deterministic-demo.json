@@ -1,0 +1,168 @@
+{
+  "provenance": "deterministic_fixture",
+  "source_file": "SchemaStress/reports/demo/report.json",
+  "description": "Compact projection of the existing 12-case seeded synthetic demo. No LLM executed.",
+  "summary": {
+    "cases": 12,
+    "parse_success_rate": 0.9166666666666666,
+    "schema_compliance_rate": 0.9166666666666666,
+    "field_accuracy": 0.8958333333333334,
+    "case_exact_match_rate": 0.8333333333333334
+  },
+  "results": [
+    {
+      "id": "INC-001",
+      "category": "ordinary",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-002",
+      "category": "reordered",
+      "parse_success": false,
+      "schema_valid": false,
+      "field_accuracy": 0.0,
+      "exact_match": false,
+      "errors": [
+        "invalid JSON line 1, column 16: Expecting value"
+      ],
+      "mismatches": [
+        {
+          "name": "customer_impact",
+          "expected": null,
+          "actual": "<MISSING>",
+          "evidence": "Customer impact has not been confirmed"
+        },
+        {
+          "name": "incident_id",
+          "expected": "INC-1042",
+          "actual": "<MISSING>",
+          "evidence": "Incident identifier: INC-1042"
+        },
+        {
+          "name": "service",
+          "expected": "payments-api",
+          "actual": "<MISSING>",
+          "evidence": "The service is payments-api"
+        },
+        {
+          "name": "severity",
+          "expected": "high",
+          "actual": "<MISSING>",
+          "evidence": "Severity is high"
+        }
+      ]
+    },
+    {
+      "id": "INC-003",
+      "category": "missing_evidence",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-004",
+      "category": "distractor",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 0.75,
+      "exact_match": false,
+      "errors": [],
+      "mismatches": [
+        {
+          "name": "severity",
+          "expected": "low",
+          "actual": "critical",
+          "evidence": "Severity: low"
+        }
+      ]
+    },
+    {
+      "id": "INC-005",
+      "category": "conflict",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-006",
+      "category": "ordinary",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-007",
+      "category": "instruction_distractor",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-008",
+      "category": "formatting",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-009",
+      "category": "missing_field",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-010",
+      "category": "conflict",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-011",
+      "category": "ordinary",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    },
+    {
+      "id": "INC-012",
+      "category": "irrelevant_numbers",
+      "parse_success": true,
+      "schema_valid": true,
+      "field_accuracy": 1.0,
+      "exact_match": true,
+      "errors": [],
+      "mismatches": []
+    }
+  ]
+}

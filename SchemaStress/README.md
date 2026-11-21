@@ -35,4 +35,4 @@ See [`docs/promptfoo-comparison.md`](docs/promptfoo-comparison.md) for the deter
 
 ## Running the actual Promptfoo CLI
 
-If the current environment cannot download npm packages, see [`docs/promptfoo-workaround.md`](docs/promptfoo-workaround.md). A GitHub Actions workflow is included to run the real CLI on a hosted runner.
+If the current environment cannot download npm packages, see [`docs/promptfoo-workaround.md`](docs/promptfoo-workaround.md). The repository CI verifies Python fixture parity.
